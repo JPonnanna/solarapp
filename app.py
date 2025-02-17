@@ -68,6 +68,7 @@ elif menu == "Outputs":
         st.write("### Predicted Data Sample")
         st.dataframe(df.head())
 
+ 
 elif menu == "Visualizations":
     st.write("### Model Outputs & Analysis")
 
@@ -81,6 +82,11 @@ elif menu == "Visualizations":
     if os.path.exists("./out/train.csv") and os.path.exists("./out/test.csv"):
         train_data = pd.read_csv("./out/train.csv")
         test_data = pd.read_csv("./out/test.csv")
-        
-        # Call the visualization function with necessary data
-        visualize_all(train_data, test_data, pred_data)  
+
+        # Extract the actual values and predicted values
+        actual = pred_data["Actual"]  # Replace "target" with the actual column name
+        pred = pred_data["Predicted"]  # Replace "predicted" with the predicted column name
+
+        # Call the visualize_all function and pass the relevant data
+        visualize_all(train_data, test_data, pred_data, train_data, actual, pred)
+   

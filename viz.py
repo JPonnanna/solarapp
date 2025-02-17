@@ -77,13 +77,12 @@ def plot_power_consumption_vs_temperature(data):
     return plt
 
 # Caller function to display all visualizations
-def visualize_all(data, test, predicted_data, bst, train, actual, pred):
+def visualize_all(data, test, predicted_data, train, actual, pred):
     # Call all the plotting functions and display them using Streamlit's st.pyplot()
     st.pyplot(plot_correlation_heatmap(data))
     st.pyplot(plot_time_series_energy(test, predicted_data))
     st.pyplot(plot_feature_distribution(data, "AirTemp", "Distribution of Air Temperature", "Temperature (°C)", "Frequency"))
-    st.pyplot(plot_model_performance_metrics(bst, train, test))
-    st.pyplot(plot_seasonal_patterns(data))
+    #st.pyplot(plot_seasonal_patterns(data))
     st.pyplot(plot_wind_speed_vs_energy_generation(data))
     st.pyplot(plot_error_distribution(actual, pred))
     st.pyplot(plot_power_consumption_vs_temperature(data))
