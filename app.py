@@ -11,13 +11,15 @@ from model import preprocess_data, train_model, test_model
 
 from PIL import Image
 
+from viz import visualize_all
+
 Image.MAX_IMAGE_PIXELS = None
 
 st.title("Solar Energy Prediction with XGBoost")
 
 # Sidebar navigation
 menu = st.sidebar.selectbox("Select an option", [
-    "Home", "Preprocess Data", "Train Model", "Test Model", "Visualizations"
+    "Home", "Preprocess Data", "Train Model", "Test Model","Outputs", "Visualizations"
 ])
 
 if menu == "Home":
