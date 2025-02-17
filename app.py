@@ -7,7 +7,11 @@ import pickle
 import os
 import time
 
-from src.model import preprocess_data, train_model, test_model
+from model import preprocess_data, train_model, test_model
+
+from PIL import Image
+
+Image.MAX_IMAGE_PIXELS = None
 
 st.title("Solar Energy Prediction with XGBoost")
 
@@ -40,13 +44,13 @@ elif menu == "Visualizations":
     st.write("### Model Outputs & Analysis")
 
     if os.path.exists("./out/importance.png"):
-        st.image("./out/importance.png", caption="Feature Importance", use_column_width=True)
+        st.image("./out/importance.png", caption="Feature Importance", use_container_width=True)
     if os.path.exists("./out/tree.png"):
-        st.image("./out/tree.png", caption="Decision Tree", use_column_width=True)
+        st.image("./out/tree.png", caption="Decision Tree", use_container_width=True)
     if os.path.exists("./out/error.png"):
-        st.image("./out/error.png", caption="Error Analysis", use_column_width=True)
+        st.image("./out/error.png", caption="Error Analysis", use_container_width=True)
     if os.path.exists("./out/scatterplot.png"):
-        st.image("./out/scatterplot.png", caption="Actual vs Predicted", use_column_width=True)
+        st.image("./out/scatterplot.png", caption="Actual vs Predicted", use_container_width=True)
 
     if os.path.exists("./out/predicted_data.csv"):
         df = pd.read_csv("./out/predicted_data.csv")

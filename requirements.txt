@@ -1,0 +1,12 @@
+streamlit  # Streamlit version (adjust if needed)
+pandas      # For data manipulation
+numpy    # For numerical operations
+scikit-learn  # For machine learning algorithms (if you're using any)
+xgboost     # For XGBoost (if you're using it)
+Pillow      # For image processing
+matplotlib   # For plotting (if you're using it)
+seaborn
+pytz
+graphviz
+markdown-it-py
+rich
